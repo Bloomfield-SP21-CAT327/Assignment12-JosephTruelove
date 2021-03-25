@@ -401,3 +401,4 @@ MonoBehaviour:
   playerSpawnMethod: 0
   spawnPrefabs:
   - {fileID: 3766389650236842805, guid: 3812e90d8f2408e47b7bff98ea4830cd, type: 3}
+  - {fileID: 1877929966782506573, guid: dc737ec0098089d44a03ab3ad0442116, type: 3}

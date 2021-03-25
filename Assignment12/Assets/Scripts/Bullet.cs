@@ -7,6 +7,8 @@ public class Bullet : NetworkBehaviour
 {
     [SyncVar]
     public Color color;
+    [SyncVar]
+    public uint parentNetID;
 
     public override void OnStartClient()
     {
@@ -15,6 +17,11 @@ public class Bullet : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        if(isServer && other.tag == "Enemy")
+        {
+            Player player = NetworkIdentity.spawned[parentNetID].GetComponent<Player>();
+            player.score += 100;
+            Destroy(other.gameObject);
+        }
     }
 }

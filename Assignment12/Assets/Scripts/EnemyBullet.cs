@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class Bullet : NetworkBehaviour
+public class EnemyBullet : NetworkBehaviour
 {
     [SyncVar]
     public Color color;
@@ -17,13 +17,12 @@ public class Bullet : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(isServer && other.tag == "Enemy")
-        {
-            Player player = NetworkIdentity.spawned[parentNetID].GetComponent<Player>();
-            player.score += 100;
-            Destroy(other.gameObject);
-        }
+        
 
+        if (isServer && other.tag == "Player")
+        {
+            other.GetComponent<Player>().health--;
+        }
 
     }
 }

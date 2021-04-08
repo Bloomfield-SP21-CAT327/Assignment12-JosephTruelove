@@ -14,12 +14,16 @@ public class Enemy : NetworkBehaviour
     public int health = 5;
 
     public float fireTime = 3;
+    public Vector3 nextPosition;
 
-
+    private void Awake()
+    {
+        nextPosition = new Vector3(Random.Range(-6.75f, 6.75f), Random.Range(1.0f, 8.0f), 4.5f);
+    }
     private void Update()
     {
 
-
+        transform.position = Vector3.MoveTowards(transform.position, nextPosition, Time.deltaTime * 5);
         if (health == 0)
         {
             Destroy(this);
@@ -37,6 +41,8 @@ public class Enemy : NetworkBehaviour
                 Destroy(bullet, 0.875f);
                 NetworkServer.Spawn(bullet);
                 fireTime = Time.time + 2;
+                nextPosition = new Vector3(Random.Range(-6.75f, 6.75f), Random.Range(1.0f, 8.0f), 4.5f);
+                transform.position = Vector3.MoveTowards(transform.position, nextPosition, Time.deltaTime * 100);
             }
         }
 

@@ -16,6 +16,7 @@ public class Player : NetworkBehaviour
     public int health;
 
     private Text scoreText;
+    private Text healthText;
 
     private void Update()
     {
@@ -23,6 +24,7 @@ public class Player : NetworkBehaviour
         {
             GetInput();
             scoreText.text = "Score: " + score;
+            healthText.text = "Health: " + health;
         }
 
         if (health == 0)
@@ -78,6 +80,7 @@ public class Player : NetworkBehaviour
     {
         gameObject.GetComponent<Renderer>().material.color = color;
         scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
+        healthText = GameObject.Find("HealthText").GetComponent<Text>();
     }
 
     

@@ -12,6 +12,8 @@ public class Player : NetworkBehaviour
     public GameObject bulletPrefab;
     [SyncVar]
     public int score;
+    [SyncVar]
+    public int health;
 
     private Text scoreText;
 
@@ -21,6 +23,11 @@ public class Player : NetworkBehaviour
         {
             GetInput();
             scoreText.text = "Score: " + score;
+        }
+
+        if (health == 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 
@@ -72,5 +79,7 @@ public class Player : NetworkBehaviour
         gameObject.GetComponent<Renderer>().material.color = color;
         scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
+
+    
 }
     

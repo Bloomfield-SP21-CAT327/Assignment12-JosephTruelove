@@ -23,5 +23,11 @@ public class Bullet : NetworkBehaviour
             player.score += 100;
             Destroy(other.gameObject);
         }
+
+        if (isServer && other.tag == "Player")
+        {
+            other.GetComponent<Player>().health--;
+        }
+
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1877929966782506570}
   - component: {fileID: 1877929966782506571}
   - component: {fileID: 1877929966782506572}
+  - component: {fileID: -151530499979554326}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -113,3 +114,20 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 
   hasSpawned: 0
+--- !u!114 &-151530499979554326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877929966782506573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d01ec0745deb2a4eb69c8143c6025f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+  moveSpeed: 1.875
+  bulletPrefab: {fileID: 3766389650236842805, guid: 3812e90d8f2408e47b7bff98ea4830cd, type: 3}
+  score: 0
+  health: 5

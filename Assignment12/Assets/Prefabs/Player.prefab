@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8308458367285078260}
   - component: {fileID: 6947524699916314544}
   - component: {fileID: 9055468502834557011}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -133,3 +133,4 @@ MonoBehaviour:
   moveSpeed: 1.875
   bulletPrefab: {fileID: 3766389650236842805, guid: 3812e90d8f2408e47b7bff98ea4830cd, type: 3}
   score: 0
+  health: 5
